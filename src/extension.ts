@@ -5,6 +5,10 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 
 	let previewUri = vscode.Uri.parse('network-tool://showNetworkTool');
+	
+	context.logger.info('This is a info');
+	context.logger.debug('This is debug');
+	context.logger.trace('This is trace');
 
 	class TextDocumentContentProvider implements vscode.TextDocumentContentProvider {
 		private _onDidChange = new vscode.EventEmitter<vscode.Uri>();
